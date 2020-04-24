@@ -4,10 +4,10 @@ from gi.repository import Gtk
 import os
 
 class Handler:
-    def on_rokuWindow_Destroy(self, *args):
+    def on_rokuWindow_destroy(self, *args):
         Gtk.main_quit()
   
-    def on_rokuWindow_Destroy_event(self, *args):
+    def on_rokuWindow_destroy_event(self, *args):
         Gtk.main_quit()
 
     def on_powerButton_clicked(self, button):
@@ -101,7 +101,7 @@ class Handler:
         print("antenna\n")
 
     def on_netflixButton_clicked(self, button):
-        command = "curl -d '' http://192.168.1.142:8060/keypress/12"
+        command = "curl -d '' http://192.168.1.142:8060/launch/12"
         os.system(command)
         print("netflix\n")
 
