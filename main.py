@@ -106,7 +106,7 @@ class Handler:
         print("netflix\n")
 
 builder = Gtk.Builder()
-builder.add_from_file("main.glade")
+builder.add_from_file("/home/pyplot/roku_remote_replacement/roku_remote_replacement/main.glade")
 builder.connect_signals(Handler())
 
 window = builder.get_object("rokuWindow")
