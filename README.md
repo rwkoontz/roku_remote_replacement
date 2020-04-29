@@ -7,5 +7,6 @@ Thanks to https://github.com/jcarbaugh/python-roku and https://github.com/alexde
 I looked at both their projects before throwing mine together.
 I should also thank the dog for eating the remote today.  Without his motivation I probably never would have bothered.
 
-This project is not well thought out and the code is not commented but maybe I will fix some that in a few days.
-The Netflix button doesn't work but after taking another look at the documentation https://developer.roku.com/docs/developer-program/debugging/external-control-api.md#! I now understand why and may fix that sometime
+The Roku documentation can be found here: https://developer.roku.com/docs/developer-program/debugging/external-control-api.md#! 
+
+I don't have a deployment solution for this.  I'm just placing the files in a directory and using a launcher from the desktop or using the python3 main.py command from the terminal in the directory.
