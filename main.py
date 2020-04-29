@@ -3,6 +3,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 import os
 import ssdp
+import sys
 
 class Handler:
     def on_rokuWindow_destroy(self, *args):
@@ -114,8 +115,10 @@ class Handler:
         print(mylocation + "\n")
 
 mylocation = "none"
+homePath = sys.path[0]
+print(type(homePath))
 try:
-    with open('IPADDRESS.txt', 'r') as myfile:
+    with open(homePath + '/IPADDRESS.txt', 'r') as myfile:
         mylist=myfile.readline().split("\n")
         mylocation=mylist[0]
         print(type(mylocation))
@@ -123,7 +126,7 @@ except:
     print("no device address file found\n")
 
 builder = Gtk.Builder()
-builder.add_from_file("/home/pyplot/roku_remote_replacement/roku_remote_replacement/main.glade")
+builder.add_from_file(homePath + "/main.glade")
 builder.connect_signals(Handler())
 
 window = builder.get_object("rokuWindow")
@@ -132,6 +135,6 @@ window.show_all()
 Foundlabel = builder.get_object("foundLabel")
 Foundlabel.set_text(mylocation)
 
-
+print(sys.path[0])
 
 Gtk.main()
